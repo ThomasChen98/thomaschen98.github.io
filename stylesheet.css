@@ -302,6 +302,7 @@ em { font-style: italic; color: var(--muted); }
 .footer .license { margin-top: 8px; font-size: 11px; line-height: 1.6; color: var(--faint); }
 .footer .license a { color: var(--muted); }
 .footer .license a:hover { color: var(--accent2); }
+.footer .vmap { display: flex; justify-content: center; margin: 2px 0 14px; min-height: 158px; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 600px) {

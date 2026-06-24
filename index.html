@@ -469,9 +469,9 @@
 
     <!-- ============== Footer ============== -->
     <footer class="footer">
+      <div id="visitor-map" class="vmap" aria-label="Visitor map"></div>
       Last updated <span id="lastupd">Jun 2026</span> · Yuxin Chen <span class="zh">陈瑀昕</span>
       <div class="license">Design &amp; code licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>. Feel free to reuse the <a href="https://github.com/ThomasChen98/thomaschen98.github.io" target="_blank" rel="noopener">source code</a> &mdash; if you do, please link back to this site. 🙏</div>
-      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=250&t=n&d=xHEqsE3-cs5xSGfhejjq_heI0c-bCiXKYwA4T-1llyQ&co=323232'></script>
     </footer>
 
   </main>
@@ -479,12 +479,29 @@
   <script>
     (function(){
       var root = document.documentElement;
-      function setTheme(t){ root.setAttribute('data-theme', t); try { localStorage.setItem('theme', t); } catch(e){} }
+
+      // visitor map (MapMyVisitors) — colors matched to the site, synced to day/night
+      var MAP_ID = '9jta5W0f1AjMcXMzKWd-02aaFau6cYUCFIubPadbJnI';
+      var MAP_LIGHT = '&cl=ffffff&co=bcd6f2&cmo=a7b0bb&cmn=e8800c&ct=23262a'; // land white, ocean soft-blue, recent=accent orange
+      var MAP_DARK  = '&cl=2b3038&co=14161b&cmo=6b7178&cmn=f0a24a&ct=d8dadf'; // ocean=page bg, land=slate, recent=accent orange
+      function loadVisitorMap(theme){
+        var box = document.getElementById('visitor-map');
+        if (!box) return;
+        var old = document.getElementById('mapmyvisitors-widget'); if (old && !box.contains(old)) old.remove();
+        box.innerHTML = '';
+        var s = document.createElement('script');
+        s.type = 'text/javascript'; s.id = 'mapmyvisitors';
+        s.src = 'https://mapmyvisitors.com/map.js?d=' + MAP_ID + '&w=300&t=n' + (theme === 'dark' ? MAP_DARK : MAP_LIGHT);
+        box.appendChild(s);
+      }
+
+      function setTheme(t){ root.setAttribute('data-theme', t); try { localStorage.setItem('theme', t); } catch(e){} loadVisitorMap(t); }
       var btn = document.querySelector('.theme-toggle');
       if (btn) btn.addEventListener('click', function(){
         var cur = root.getAttribute('data-theme') || 'light';
         setTheme(cur === 'dark' ? 'light' : 'dark');
       });
+      loadVisitorMap(root.getAttribute('data-theme') || 'light');
 
       // scroll-spy: highlight current section in the top nav
       var links = {};
