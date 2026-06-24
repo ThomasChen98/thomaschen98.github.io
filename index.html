@@ -1,663 +1,591 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>Yuxin Chen</title>
-		<meta name="author" content="Yuxin Chen">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" href="stylesheet.css">  
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Yuxin Chen</title>
+  <meta name="author" content="Yuxin Chen">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    /* set theme before paint to avoid a flash */
+    (function(){try{var t=localStorage.getItem('theme');if(!t){t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+  </script>
+  <link rel="icon" type="image/svg+xml" href="images/favicon/yc.svg">
+  <link rel="alternate icon" href="images/favicon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fontsapi.zeoseven.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fontsapi.zeoseven.com/309/main/result.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
 
-	<body>
-		<table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-			<tr style="padding:0px">
-				<td style="padding:0px">
-					<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-						<tr style="padding:0px">
-							<td style="padding:2.5%;width:63%;vertical-align:middle">
-								<!-------------------------------------------------------------------------->
-								<!-------------------------------Head--------------------------------------->
-								<!-------------------------------------------------------------------------->
-								<p class="name" style="text-align: center;">Yuxin Chen - 陈瑀昕</p>
-								<p>Hi! I’m a fourth-year Ph.D. candidate at <a href="https://www.berkeley.edu">UC Berkeley</a> and a member of <a href="https://bair.berkeley.edu">BAIR</a>. I’m fortunate to be advised by Prof. <a href="http://www.me.berkeley.edu/people/faculty/masayoshi-tomizuka">Masayoshi Tomizuka</a>, an <a href="https://www.nae.edu/270224/National-Academy-of-Engineering-Elects-111-Members-and-22-International-Members">NAE</a> member in the <a href="https://msc.berkeley.edu">MSC Lab</a>.
-									<br><br>
-									Before Berkeley, I earned an M.S. in Robotics at the <a href="https://umich.edu">University of Michigan, Ann Arbor</a>, where I worked with Prof. <a href="https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/">Ram Vasudevan</a>, and a B.S. in Aerospace Engineering under Prof. <a href="https://a2sys.engin.umich.edu/people/679-2/">Ella Atkins</a>. I also hold a B.S. in Mechanical Engineering from <a href="https://en.sjtu.edu.cn">Shanghai Jiao Tong University</a>.
-									<br><br>
-									During my graduate studies, I’ve been fortunate to take on research intern roles at <a href="https://www.nvidia.com/en-us/research/">Nvidia</a>, <a href="https://rai-inst.com">RAI Institute</a>, and <a href="https://www.merl.com">MERL</a>, and to collaborate with <a href="https://deepmind.google/">Google DeepMind</a> and <a href="https://ai.sony/">Sony AI</a>. Earlier, I worked as a software intern at <a href="https://zoox.com">Zoox</a> and <a href="https://www.zf.com/mobile/en/homepage/homepage.html">ZF</a>.
-								</p>
-								<p style="text-align:center">
-									<a href="mailto:yuxinc@berkeley.edu">Email</a> &nbsp;/&nbsp;
-									<a href="data/YuxinChen_CV_2026_5.pdf">CV</a> &nbsp;/&nbsp;
-									<a href="https://scholar.google.com/citations?hl=en&view_op=list_works&gmla=AH70aAWXsUyeSVMOVk2GPMe7TW_VEm30quYO2mV434ItGa7y1v4H5mTgj64LYsa4RqYJ2b7ENjOwo5rSi5bk6x0v6CHn&user=EzoDsIMAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
-									<a href="https://www.linkedin.com/in/thomaschen98/">LinkedIn</a> &nbsp;/&nbsp;
-									<a href="https://x.com/ThomasYuxinChen">X</a> &nbsp;/&nbsp;
-									<a href="https://github.com/ThomasChen98">Github</a>
-								</p>
-							</td>
-							<!-------------------------------------------------------------------------->
-							<!-------------------------------Photo-------------------------------------->
-							<!-------------------------------------------------------------------------->
-							<td style="padding:2.5%; width:40%; max-width:40%">
-								<a href="images/YuxinChen.jpg"><img style="width:100%; max-width:100%; object-fit: cover; border-radius: 20%;" alt="profile photo" src="images/YuxinChen.jpg" class="hoverZoomLink"></a>
-								<p style="text-align:center"> yuxinc [at] berkeley [dot] edu</p>
-							</td>
-						</tr>
-					</tbody></table>
-					
+<body>
+  <!-- ============== Top nav (text-width) ============== -->
+  <nav class="topnav">
+    <div class="topnav-inner">
+      <a class="brand" href="#about">Yuxin Chen</a>
+      <div class="navlinks">
+        <a href="#about">About</a>
+        <a href="#news">News</a>
+        <a href="#publications">Publications</a>
+        <a href="#background">Background</a>
+      </div>
+      <button class="theme-toggle" type="button" aria-label="Toggle day / night" title="Day / night">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      </button>
+    </div>
+  </nav>
 
-					<!-- news feed -->
-					<!-- news feed -->
-					<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-						<tbody>
-							<tr>
-								<td style="padding-left:2.5%;padding-bottom:20px;width:100%;vertical-align:middle">
-									<heading><b>News</b></heading>
-									<div style="margin-left: 40px;">
-										<table style="border-collapse:collapse;">
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Apr 2026]</td>
-												<td>
-													<img src="images/new_animated.gif" style="vertical-align:middle; margin-right:5px;" alt="new gif animation">
-													One accepted paper (<a href="https://icml.cc/virtual/2026/poster/66366">REAR</a>) at ICML 2026!</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Mar 2026]</td>
-												<td>
-													I joined <a href="https://www.nvidia.com/en-us/research/">Nvidia</a> as a research intern!
-												</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Feb 2026]</td>
-												<td>Gave a <a href="https://www.youtube.com/watch?v=Cbg2jcwsfpA">talk</a> @ Georgia Institute of Technology LIDAR Group!</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Jan 2026]</td>
-												<td>Two accepted papers (<a href="https://arxiv.org/abs/2506.16565">World-Model Predictive Control</a> and <a href="https://arxiv.org/abs/2505.00991">Dexterous manipulation</a>) at ICRA 2026!</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Jan 2026]</td>
-												<td>One accepted paper (<a href="https://arxiv.org/abs/2602.13810v1">Mean Flow Policy</a>) at ICLR 2026 as <a style="color: red;"> Oral Presentation</a>!</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Jan 2026]</td>
-												<td>Gave a talk @ Shanghai Jiao Tong University <a href="https://www.mvig.org">Machine Vision and Intelligence Group</a>!</td>
-											</tr>
-											<!-- <tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Dec 2025]</td>
-												<td>Gave a talk @ Shenglanxueyuan Webinar!</td>
-											</tr> -->
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold; width:90px;">[Aug 2025]</td>
-												<td>
-													<!-- <img src="images/new_animated.gif" style="vertical-align:middle; margin-right:5px;"> -->
-													Two accepted papers (<a href="https://arxiv.org/abs/2506.07876">Loco-manipulation</a> and <a href="https://arxiv.org/abs/2406.16258">Human-in-the-loop</a>) at CoRL 2025, with <a href="https://arxiv.org/abs/2506.07876">Loco-manipulation</a> as <a style="color: red;"> Oral Presentation</a>!
-												</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold; width:90px;">[May 2025]</td>
-												<td>
-													Our paper on <a href="https://arxiv.org/abs/2502.13443">Robotic Palletization</a> won ICRA 2025
-													<a href="https://www.ieee-ras.org/awards-recognition/conference-awards?view=article&id=71:icra-best-automation-paper&catid=69:society-awards"
-														 style="color:red;"> Best Paper Award in Automation (10/4153)</a>!
-												</td>
-											</tr>
-											<!-- <tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Apr 2025]</td>
-												<td>
-													I won the finalist award in the <a href=" https://www.qualcomm.com/research/university-relations/innovation-fellowship/2025-north-america"
-													style="color: red;">
-													2025 Qualcomm Innovation Fellowship </a> !
-												</td>
-											</tr>
-											<tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Mar 2025]</td>
-												<td>I joined <a href="https://rai-inst.com">RAI Institute (previously BDAI)</a> as a research intern!</td>
-											</tr> -->
-											<!-- <tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Feb 2025]</td>
-												<td>Gave a <a href="https://www.youtube.com/watch?v=Xgs_wCc_qnE">talk</a> @ TwelveLabs Webinar!</td>
-											</tr> -->
-											<!-- <tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Jan 2025]</td>
-												<td>Two accepted papers (<a href="https://arxiv.org/abs/2501.08259">Fine-tune Diffusion Policy</a> and <a href="https://arxiv.org/abs/2502.13443">Robotic Palletization</a>) at ICRA 2025!</td>
-											</tr> -->
-											<!-- <tr style="margin-bottom:6px;">
-												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Sep 2024]</td>
-												<td>One accepted paper (<a href="https://arxiv.org/abs/2406.18868">Continual Learning of VLM</a>) at NeurIPS 2024!</td>
-											</tr> -->
-<!--											<tr style="margin-bottom:6px;">-->
-<!--												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[May 2024]</td>-->
-<!--												<td>One accepted paper (<a href="https://rlj.cs.umass.edu/2024/papers/RLJ_RLC_2024_253.pdf">Multi-agent RL</a>) at RLC 2024!</td>-->
-<!--											</tr>-->
-<!--											<tr style="margin-bottom:6px;">-->
-<!--												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Feb 2024]</td>-->
-<!--												<td>I joined <a href="https://www.merl.com">Mitsubishi Electric Research Laboratories (MERL)</a> as a research intern!</td>-->
-<!--											</tr>-->
-<!--											<tr style="margin-bottom:6px;">-->
-<!--												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Dec 2023]</td>-->
-<!--												<td>One accepted abstract (<a href="https://arxiv.org/pdf/2310.07218">Multi-agent RL</a>) at AAMAS 2024!</td>-->
-<!--											</tr>-->
-<!--											<tr style="margin-bottom:6px;">-->
-<!--												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Oct 2023]</td>-->
-<!--												<td>We organized the <a href="https://2023.iavvc.org/workshops" rel="external nofollow noopener" target="_blank">Workshop on Scenario and Behavior Diversity in Simulation for Autonomous Vehicle Validation</a> at IEEE IAVVC 2023!</td>-->
-<!--											</tr>-->
-<!--											<tr>-->
-<!--												<td style="vertical-align:top; white-space:nowrap; color:#f18800; font-weight:bold;">[Aug 2022]</td>-->
-<!--												<td>I started as a Ph.D. student in MSC Lab at UC Berkeley!</td>-->
-<!--											</tr>-->
-										</table>
-									</div>
-								</td>
-							</tr>
-						</tbody>
-					</table>
+  <main class="wrap">
 
+    <!-- ============== Top: header + about.sh ============== -->
+    <div class="top" id="about">
+    <header class="header">
+      <div class="photo">
+        <a href="images/YuxinChen.jpg"><img src="images/YuxinChen.jpg" alt="Yuxin Chen"></a>
+      </div>
+      <div class="intro">
+        <h1 class="name">Yuxin Chen<span class="zh">陈瑀昕</span><span class="caret">▍</span></h1>
+        <div class="tagline">Ph.D. Candidate, UC Berkeley<span class="dot">·</span>BAIR<span class="dot">·</span>MSC Lab</div>
+        <div class="links">
+          <a href="mailto:yuxinc@berkeley.edu">Email</a><span class="sep">/</span>
+          <a href="data/YuxinChen_CV_2026_6.pdf">CV</a><span class="sep">/</span>
+          <a href="https://scholar.google.com/citations?hl=en&user=EzoDsIMAAAAJ">Scholar</a><span class="sep">/</span>
+          <a href="https://www.linkedin.com/in/thomaschen98/">LinkedIn</a><span class="sep">/</span>
+          <a href="https://x.com/ThomasYuxinChen">X</a><span class="sep">/</span>
+          <a href="https://github.com/ThomasChen98">GitHub</a>
+        </div>
+      </div>
+    </header>
 
-					<!-- Publication Header -->
-					<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-						<tr>
-							<td style="padding:20px;width:100%;vertical-align:middle">
-								<h2>Publication & Preprint</h2>* denotes equal contribution
-							</td>
-						</tr>
-					</tbody></table>
+    <!-- ============== Code-block flourish ============== -->
+    <div class="codeblock">
+      <div class="cb-bar"><span class="dot r"></span><span class="dot y"></span><span class="dot g"></span><span class="fname">about.sh</span></div>
+<pre><span class="cmd">$</span> whoami
+<span class="out">&gt; Yuxin Chen — Ph.D. @ UC Berkeley (MSC Lab · BAIR · HIC)</span>
+<span class="out">&gt; building safe &amp; agile embodied agents for the physical world</span>
+<span class="cmd">$</span> research <span class="kw">--focus</span>
+<span class="out">&gt; whole-body control · dexterous manipulation · human-robot interaction</span>
+<span class="cmd">$</span> research <span class="kw">--tools</span>
+<span class="out">&gt; reinforcement learning · generative models · optimization · control</span></pre>
+    </div>
+    </div>
 
-					<!-- SAGA -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2025saga.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2512.12842">
-									<papertitle>SAGA: Open-World Mobile Manipulation via Structured Affordance Grounding</papertitle>
-								</a><br>
-								Kuan Fang*, <strong>Yuxin Chen*</strong>, Xinghao Zhu*, Farzad Niroui, Lingfeng Sun, Jiuguang Wang<br><br>
-								<em>RA-L</em>, 2026<br>
-								<a href="https://arxiv.org/abs/2512.12842">arXiv</a> /
-								<a href="https://robot-saga.github.io/">Project Page</a>
-							</td>
-						</tr>
-					</table>
+    <!-- ============== Bio ============== -->
+    <section class="bio" id="biobox">
+      <p>Hi! I'm a fourth-year Ph.D. candidate at <a href="https://www.berkeley.edu">UC Berkeley</a> and a member of <a href="https://bair.berkeley.edu">BAIR</a>. I'm fortunate to be advised by Prof. <a href="http://www.me.berkeley.edu/people/faculty/masayoshi-tomizuka">Masayoshi Tomizuka</a>, an <a href="https://www.nae.edu/270224/National-Academy-of-Engineering-Elects-111-Members-and-22-International-Members">NAE</a> member, in the <a href="https://msc.berkeley.edu">MSC Lab</a>.</p>
+      <p class="extra-p">Before Berkeley, I earned an M.S. in Robotics at the <a href="https://umich.edu">University of Michigan, Ann Arbor</a>, where I worked with Prof. <a href="https://me.engin.umich.edu/people/faculty/ramanarayan-vasudevan/">Ram Vasudevan</a>, and a B.S. in Aerospace Engineering under Prof. <a href="https://a2sys.engin.umich.edu/people/679-2/">Ella Atkins</a>. I also hold a B.S. in Mechanical Engineering from <a href="https://en.sjtu.edu.cn">Shanghai Jiao Tong University</a>.</p>
+      <p>During my graduate studies, I've been fortunate to take on research intern roles at <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a>, the <a href="https://rai-inst.com">RAI Institute</a>, and <a href="https://www.merl.com">MERL</a>, and to collaborate with <a href="https://deepmind.google/">Google DeepMind</a> and <a href="https://ai.sony/">Sony AI</a>.<span class="extra-inline"> Earlier, I worked as a software intern at <a href="https://zoox.com">Zoox</a> and <a href="https://www.zf.com/mobile/en/homepage/homepage.html">ZF</a>.</span></p>
+      <button class="showmore" type="button" data-target="#biobox" data-more="▸ show more about my background" data-less="▾ show less" aria-expanded="false">▸ show more about my background</button>
+    </section>
 
-					<!-- ReOI -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2025reoi.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2506.16565">
-									<papertitle>Reimagination with Test-time Observation Interventions: Distractor-Robust World Model Predictions for Visual Model Predictive Control</papertitle>
-								</a><br>
-								<strong>Yuxin Chen*</strong>, Jianglan Wei*, Chenfeng Xu, Boyi Li, Masayoshi Tomizuka, Andrea Bajcsy, Ran Tian<br><br>
-								<em>ICRA</em>, 2026<br>
-								<em>RSS workshop on OOD</em>, 2025 (<b style="color:rgb(183, 0, 0)">Oral, Best Paper Finalist</b>)<br>
-								<a href="https://arxiv.org/abs/2506.16565">arXiv</a>
-							</td>
-						</tr>
-					</table>
+    <!-- ============== News ============== -->
+    <section class="section band tint" id="news">
+      <h2>📰 News</h2>
+      <div class="news" id="newsbox">
+        <div class="row"><span class="date">[Jun 2026]</span><span class="what">Our paper 3DWay was accepted to ECCV 2026!</span></div>
+        <div class="row"><span class="date">[Apr 2026]</span><span class="what">One accepted paper (<a href="https://openreview.net/forum?id=z6pXpXufuO">REAR</a>) at ICML 2026!</span></div>
+        <div class="row"><span class="date">[Mar 2026]</span><span class="what">Our paper (<a href="https://arxiv.org/abs/2512.12842">SAGA</a>) was accepted to IEEE RA-L!</span></div>
+        <div class="row"><span class="date">[Mar 2026]</span><span class="what">I joined <a href="https://www.nvidia.com/en-us/research/">NVIDIA</a> as a research intern!</span></div>
+        <div class="row"><span class="date">[Feb 2026]</span><span class="what">Gave a <a href="https://www.youtube.com/watch?v=Cbg2jcwsfpA">talk</a> @ Georgia Tech LIDAR Group!</span></div>
+        <div class="row"><span class="date">[Jan 2026]</span><span class="what">Two accepted papers (<a href="https://arxiv.org/abs/2506.16565">World-Model Predictive Control</a> and <a href="https://arxiv.org/abs/2505.00991">Dexterous Manipulation</a>) at ICRA 2026!</span></div>
+        <div class="row"><span class="date">[Jan 2026]</span><span class="what">One accepted paper (<a href="https://arxiv.org/abs/2602.13810">Mean Flow Policy</a>) at ICLR 2026 as <span class="award">Oral</span>!</span></div>
+        <div class="row"><span class="date">[Jan 2026]</span><span class="what">Gave a talk @ Shanghai Jiao Tong University <a href="https://www.mvig.org">MVIG</a>!</span></div>
+        <div class="row"><span class="date">[Dec 2025]</span><span class="what">Gave a talk @ Shenglanxueyuan Webinar!</span></div>
+        <div class="row"><span class="date">[Aug 2025]</span><span class="what">Two accepted papers (<a href="https://arxiv.org/abs/2506.07876">Loco-Manipulation</a>, <span class="award">Oral</span>, and <a href="https://arxiv.org/abs/2406.16258">Human-in-the-loop</a>) at CoRL 2025!</span></div>
+        <div class="row extra"><span class="date">[May 2025]</span><span class="what">Our paper on <a href="https://arxiv.org/abs/2502.13443">Robotic Palletization</a> won the <a href="https://www.ieee-ras.org/awards-recognition/conference-awards?view=article&id=71:icra-best-automation-paper&catid=69:society-awards" class="award">ICRA 2025 Best Paper Award in Automation (10/4153)</a>!</span></div>
+        <div class="row extra"><span class="date">[Apr 2025]</span><span class="what">Finalist, <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2025-north-america">2025 Qualcomm Innovation Fellowship</a>!</span></div>
+        <div class="row extra"><span class="date">[Mar 2025]</span><span class="what">I joined the <a href="https://rai-inst.com">RAI Institute</a> (prev. Boston Dynamics AI Institute) as a research intern!</span></div>
+        <div class="row extra"><span class="date">[Feb 2025]</span><span class="what">Gave a <a href="https://www.youtube.com/watch?v=Xgs_wCc_qnE">talk</a> @ TwelveLabs Webinar!</span></div>
+        <div class="row extra"><span class="date">[Jan 2025]</span><span class="what">Two accepted papers (<a href="https://arxiv.org/abs/2501.08259">FDPP</a> and <a href="https://arxiv.org/abs/2502.13443">Robotic Palletization</a>) at ICRA 2025!</span></div>
+        <div class="row extra"><span class="date">[Sep 2024]</span><span class="what">One accepted paper (<a href="https://arxiv.org/abs/2406.18868">Continual Learning of VLM</a>) at NeurIPS 2024!</span></div>
+        <div class="row extra"><span class="date">[May 2024]</span><span class="what">One accepted paper (<a href="https://rlj.cs.umass.edu/2024/papers/RLJ_RLC_2024_253.pdf">Multi-agent RL</a>) at RLC 2024!</span></div>
+        <div class="row extra"><span class="date">[Feb 2024]</span><span class="what">I joined <a href="https://www.merl.com">MERL</a> as a research intern!</span></div>
+        <div class="row extra"><span class="date">[Dec 2023]</span><span class="what">One accepted abstract (Multi-agent RL) at AAMAS 2024!</span></div>
+        <div class="row extra"><span class="date">[Oct 2023]</span><span class="what">Organized the <a href="https://2023.iavvc.org/workshops">Workshop on Scenario &amp; Behavior Diversity in Simulation for AV Validation</a> at IEEE IAVVC 2023!</span></div>
+        <div class="row extra"><span class="date">[Aug 2022]</span><span class="what">I started my Ph.D. in the MSC Lab at UC Berkeley!</span></div>
+      </div>
+      <button class="showmore" type="button" data-target="#newsbox" data-more="▸ show more news" data-less="▾ show less" aria-expanded="false">▸ show more news</button>
+    </section>
 
-					<!-- DexCtrl -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/zhao2025dexctrl.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2505.00991">
-									<papertitle>DexCtrl: Towards Sim-to-Real Dexterity with Adaptive Controller Learning</papertitle>
-								</a><br>
-								Shuqi Zhao, Ke Yang, <strong>Yuxin Chen</strong>, Chenran Li, Yichen Xie, Xiang Zhang, Changhao Wang, Masayoshi Tomizuka<br><br>
-								<em>ICRA</em>, 2026<br>
-								<a href="https://arxiv.org/abs/2505.00991">arXiv</a>
-							</td>
-						</tr>
-					</table>
+    <!-- ============== Publications ============== -->
+    <section class="section" id="publications">
+      <h2>📚 Publications &amp; Preprints</h2>
+      <p class="note">* denotes equal contribution &nbsp;·&nbsp; acceptance rates / award percentages shown</p>
 
-					<!-- ReLIC -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2025relic.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2506.07876">
-									<papertitle>Versatile Loco-Manipulation through Flexible Interlimb Coordination</papertitle>
-								</a><br>
-								Xinghao Zhu*, <strong>Yuxin Chen*</strong>, Lingfeng Sun*, Farzad Niroui, Simon Le Cleac'h, Jiuguang Wang, Kuan Fang<br><br>
-								<em>CoRL</em>, 2025 (<b style="color:rgb(183, 0, 0)">Oral</b>)<br>
-								<em>RSS workshop on WCBM</em>, 2025<br>
-								<a href="https://arxiv.org/abs/2506.07876">arXiv</a> /
-								<a href="https://relic-locoman.rai-inst.com">Project Page</a>
-							</td>
-						</tr>
-					</table>
+      <!-- CLIFT -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/clift.gif" alt="CLIFT"><span class="conf-badge">Preprint</span></div>
+        <div class="meta">
+          <span class="ptitle">CLIFT: Turning Gemini Robotics On-Device into Humanoid Specialists via Non-Invasive Closed-Loop Iterative Fine-Tuning</span>
+          <div class="authors"><span class="me">Yuxin Chen</span>, Hari Srikanth, Nathan Jew, Menglin Wu, Pengcheng Wang, Junli Ren, Masayoshi Tomizuka, Peng Xu, Jinyu Xie, Thomas Tian</div>
+          <div class="venue"><em>Preprint</em>, 2026 &nbsp;·&nbsp; under review</div>
+          <div class="reslinks"><a href="https://scholar.google.com/citations?hl=en&user=EzoDsIMAAAAJ">Scholar</a></div>
+        </div>
+      </div>
 
-					<!-- MEReQ -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2024mereq.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2406.16258">
-									<papertitle>MEReQ: Max-Ent Residual-Q Inverse RL for Sample-Efficient Alignment from Intervention</papertitle>
-								</a><br>
-								<strong>Yuxin Chen*</strong>, Chen Tang*, Chenran Li, Ran Tian, Peter Stone, Masayoshi Tomizuka, Wei Zhan<br><br>
-								<em>CoRL</em>, 2025<br>
-								<a href="https://arxiv.org/abs/2406.16258">arXiv</a> /
-								<a href="https://thomaschen98.github.io/mereq.github.io/">Project Page</a>
-							</td>
-						</tr>
-					</table>
+      <!-- Humanoid Navigation -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/humanoid.gif" alt="Humanoid Navigation"><span class="conf-badge">Preprint</span></div>
+        <div class="meta">
+          <span class="ptitle">Humanoid Navigation in Cluttered Environments with a Whole-Body Vision-Language-Action Model</span>
+          <div class="authors">Anqi Li*, <span class="me">Yuxin Chen*</span>, Zhaobo Li, Zhuo Cao, Junli Ren, Masayoshi Tomizuka, Dhruv Shah</div>
+          <div class="venue"><em>Preprint</em>, 2026 &nbsp;·&nbsp; under review</div>
+          <div class="reslinks"><a href="https://scholar.google.com/citations?hl=en&user=EzoDsIMAAAAJ">Scholar</a></div>
+        </div>
+      </div>
 
-					<!-- FDPP -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2024fdpp.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2501.08259">
-									<papertitle>FDPP: Fine-tune Diffusion Policy with Human Preference</papertitle>
-								</a><br>
-								<strong>Yuxin Chen</strong>, Devesh K. Jha, Masayoshi Tomizuka, Diego Romeres<br><br>
-								<em>ICRA</em>, 2025<br>
-								<em>ICRA workshop on safe VLM</em>, 2025 (<b style="color:rgb(183, 0, 0)">Oral</b>)<br>
-								<a href="https://arxiv.org/abs/2501.08259">arXiv</a>
-							</td>
-						</tr>
-					</table>
+      <!-- TEXEDO -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/texedo.gif" alt="TEXEDO"><span class="conf-badge">Preprint</span></div>
+        <div class="meta">
+          <span class="ptitle">TEXEDO: Test Time Scaling for Controller-Aware Language-Conditioned Humanoid Motion Generation</span>
+          <div class="authors">Jianuo Cao*, <span class="me">Yuxin Chen*</span>, Yuzhen Song, Masayoshi Tomizuka, Chenran Li, Ran Tian</div>
+          <div class="venue"><em>Preprint</em>, 2026 &nbsp;·&nbsp; under review</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2606.22998">arXiv</a><a href="https://jianuocao.github.io/TEXEDO/">Project</a><a href="https://github.com/JianuoCao/TEXEDO">Code</a><a href="https://huggingface.co/JianuoCao/TEXEDO-Checkpoint">Model</a><a href="https://huggingface.co/datasets/JianuoCao/TEXEDO">Data</a></div>
+        </div>
+      </div>
 
-					<!-- Physics-Aware Robotic Palletization -->
-<!--					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20" bgcolor="#ffffd0">-->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/zhang2024physics.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2502.13443">
-									<papertitle>Physics-Aware Robotic Palletization with Online Masking Inference</papertitle>
-								</a><br>
-								Tianqi Zhang, Zheng Wu, <strong>Yuxin Chen</strong>, Yixiao Wang, Boyuan Liang, Scott Moura, Masayoshi Tomizuka, Mingyu Ding, Wei Zhan<br><br>
-								<em>ICRA</em>, 2025 (<b style="color:rgb(183, 0, 0)">Best Paper Award in Automation</b>)<br>
-								<a href="https://arxiv.org/abs/2502.13443">arXiv</a> /
-								<a href="https://github.com/tianqi-zh/palletization">Code</a>
-							</td>
-						</tr>
-					</table>
+      <!-- 3DWay -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/3dway.gif" alt="3DWay"><span class="conf-badge">ECCV '26</span></div>
+        <div class="meta">
+          <span class="ptitle">3DWay: Generalizing Robot Manipulation via 3D Consistent Waypoints</span>
+          <div class="authors">Ziqin Huang, Yingyue Li, Chenyangguang Zhang, Ruida Zhang, <span class="me">Yuxin Chen</span>, Gu Wang, Xingyu Liu, Masayoshi Tomizuka, Xiangyang Ji</div>
+          <div class="venue"><em>ECCV</em>, 2026 <span class="rate">· 27.5%</span></div>
+          <div class="reslinks"><a href="https://scholar.google.com/citations?hl=en&user=EzoDsIMAAAAJ">Scholar</a></div>
+        </div>
+      </div>
 
-					<!-- DexH2R -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/zhao2024dexh2r.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2411.04428">
-									<papertitle>DexH2R: Task-oriented Dexterous Manipulation from Human to Robots</papertitle>
-								</a><br>
-								Shuqi Zhao*, Xinghao Zhu*, <strong>Yuxin Chen</strong>, Chenran Li, Xiang Zhang, Mingyu Ding, Masayoshi Tomizuka<br><br>
-								<em>T-MECH</em>, 2025<br>
-								<a href="https://arxiv.org/abs/2411.04428">arXiv</a>
-							</td>
-						</tr>
-					</table>
+      <!-- REAR -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/rear.png" alt="REAR"><span class="conf-badge">ICML '26</span></div>
+        <div class="meta">
+          <span class="ptitle">REAR: Test-time Preference Realignment through Reward Decomposition</span>
+          <div class="authors">Fuxiang Zhang, Pengcheng Wang, Chenran Li, Yi-Chen Li, <span class="me">Yuxin Chen</span>, Lang Feng, Chenfeng Xu, Masayoshi Tomizuka, Bo An</div>
+          <div class="venue"><em>ICML</em>, 2026 <span class="rate">· 26.6%</span></div>
+          <div class="reslinks"><a href="https://openreview.net/forum?id=z6pXpXufuO">OpenReview</a><a href="https://icml.cc/virtual/2026/poster/66366">ICML</a></div>
+        </div>
+      </div>
 
-					<!-- Advancing Cross-domain -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/xu2024advancing.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2406.18868">
-									<papertitle>Advancing Cross-domain Discriminability in Continual Learning of Vision-Language Models</papertitle>
-								</a><br>
-								<strong>Yuxin Chen*</strong>, Yicheng Xu*, Jiahao Nie, Yusong Wang, Huiping Zhuang, Manabu Okumura<br><br>
-								<em>NeurIPS</em>, 2024<br>
-								<a href="https://arxiv.org/abs/2406.18868">arXiv</a> /
-								<a href="https://github.com/linghan1997/Regression-based-Analytic-Incremental-Learning">Code</a>
-							</td>
-						</tr>
-					</table>
+      <!-- Mean Flow Policy -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/meanflow.png" alt="Mean Flow Policy"><span class="conf-badge">ICLR '26</span></div>
+        <div class="meta">
+          <span class="ptitle">Mean Flow Policy with Instantaneous Velocity Constraints for One-step Action Generation</span>
+          <div class="authors">Guojian Zhan, Letian Tao, Pengcheng Wang, Yixiao Wang, Yiheng Li, <span class="me">Yuxin Chen</span>, Masayoshi Tomizuka, Shengbo Eben Li</div>
+          <div class="venue"><em>ICLR</em>, 2026 <span class="rate">· 28.2%</span></div>
+          <div class="badges"><span class="badge-award rose">🎤 Oral · Top 1.18%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2602.13810">arXiv</a></div>
+        </div>
+      </div>
 
-					<!-- Quantifying Agent Interaction -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/chen2023quantifying.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://rlj.cs.umass.edu/2024/papers/RLJ_RLC_2024_253.pdf">
-									<papertitle>Quantifying Agent Interaction in Multi-agent Reinforcement Learning for Cost-efficient Generalization</papertitle>
-								</a><br>
-								<strong>Yuxin Chen</strong>, Chen Tang, Ran Tian, Chenran Li, Jinning Li, Masayoshi Tomizuka, Wei Zhan<br><br>
-								<em>RLC</em>, 2024<br>
-								<em>AAMAS</em>, 2024<br>
-								<a href="https://rlj.cs.umass.edu/2024/papers/RLJ_RLC_2024_253.pdf">arXiv</a> /
-								<a href="https://github.com/ThomasChen98/Level-of-Influence">Code</a>
-							</td>
-						</tr>
-					</table>
+      <!-- CLAW -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/claw.gif" alt="CLAW"><span class="conf-badge">Preprint</span></div>
+        <div class="meta">
+          <span class="ptitle">CLAW: Composable Language-annotated Whole-body Motion Generation</span>
+          <div class="authors">Jianuo Cao*, <span class="me">Yuxin Chen*</span>, Masayoshi Tomizuka</div>
+          <div class="venue"><em>Preprint</em>, 2026</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2604.11251">arXiv</a><a href="https://github.com/JianuoCao/CLAW">Code</a><a href="https://x.com/JianuoCao/status/2045353823917813934">X</a></div>
+        </div>
+      </div>
 
-					<!-- These Maps are Made for Walking -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/ewen2022these.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2205.12925">
-									<papertitle>These Maps are Made for Walking: Real-Time Terrain Property Estimation for Mobile Robots</papertitle>
-								</a><br>
-								Parker Ewen, Adam Li, <strong>Yuxin Chen</strong>, Steven Hong, Ram Vasudevan<br><br>
-								<em>RA-L</em>, 2022<br>
-								<a href="https://arxiv.org/abs/2205.12925">arXiv</a> /
-								<a href="https://roahmlab.github.io/sel_map/">Project Page</a> /
-								<a href="https://github.com/roahmlab/sel_map">Code</a> /
-								<a href="https://www.youtube.com/watch?v=4c8Zyd29244">Video</a>
-							</td>
-						</tr>
-					</table>
+      <!-- SAGA -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/saga.gif" alt="SAGA"><span class="conf-badge">RA-L '26</span></div>
+        <div class="meta">
+          <span class="ptitle">SAGA: Open-World Mobile Manipulation via Structured Affordance Grounding</span>
+          <div class="authors">Kuan Fang*, <span class="me">Yuxin Chen*</span>, Xinghao Zhu*, Farzad Niroui, Lingfeng Sun, Jiuguang Wang</div>
+          <div class="venue"><em>IEEE RA-L</em>, 2026</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2512.12842">arXiv</a><a href="https://robot-saga.github.io/">Project</a><a href="https://x.com/KuanFang/status/2000974674046673025">X</a></div>
+        </div>
+      </div>
 
-					<!-- Generating Continuous Motion -->
-					<table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/ewen2021generating.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/2104.11685">
-									<papertitle>Generating Continuous Motion and Force Plans in Real-Time for Legged Mobile Manipulation</papertitle>
-								</a><br>
-								Parker Ewen, Jean-Pierre Sleiman, <strong>Yuxin Chen</strong>, Wei-Chun Lu, Marco Hutter, Ram Vasudevan<br><br>
-								<em>ICRA</em>, 2021<br>
-								<a href="https://arxiv.org/abs/2104.11685">arXiv</a> /
-								<a href="https://www.youtube.com/watch?v=A9cBz8uujAs">Video</a>
-							</td>
-						</tr>
-					</table>
+      <!-- ReOI -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/chen2025reoi.png" alt="ReOI"><span class="conf-badge">ICRA '26</span></div>
+        <div class="meta">
+          <span class="ptitle">Reimagination with Test-time Observation Interventions: Distractor-Robust World Model Predictions for Visual Model Predictive Control</span>
+          <div class="authors"><span class="me">Yuxin Chen*</span>, Jianglan Wei*, Chenfeng Xu, Boyi Li, Masayoshi Tomizuka, Andrea Bajcsy, Ran Tian</div>
+          <div class="venue"><em>ICRA</em>, 2026 <span class="rate">· 38.0%</span></div>
+          <div class="badges"><span class="badge-award rose">🎤 Oral · RSS-WS</span><span class="badge-award blue">🏅 Best Paper Finalist · RSS-WS</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2506.16565">arXiv</a><a href="https://re-oi.github.io">Project</a></div>
+        </div>
+      </div>
 
-					<!-- Nailed It -->
-					<!-- <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-						<tr>
-							<td width="20%">
-								<img src="images/romano2021nailed.png" width="200">
-							</td>
-							<td style="padding:20px;width:75%;vertical-align:middle">
-								<a href="https://arxiv.org/pdf/1909.08162">
-									<papertitle>Nailed It: Autonomous Roofing with a Nailgun-Equipped Octocopter</papertitle>
-								</a><br>
-								Matthew M Romano, <strong>Yuxin Chen</strong>, Prince Kuevor, Owen Marshall, Ella Atkins<br><br>
-								<em>AIAA AVIATION</em>, 2021<br>
-								<a href="https://arxiv.org/abs/1909.08162">arXiv</a> /
-								<a href="https://www.youtube.com/watch?v=GA445Flxkjo">Video</a>
-							</td>
-						</tr>
-					</table> -->
+      <!-- DexCtrl -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/zhao2025dexctrl.png" alt="DexCtrl"><span class="conf-badge">ICRA '26</span></div>
+        <div class="meta">
+          <span class="ptitle">DexCtrl: Towards Sim-to-Real Dexterity with Adaptive Controller Learning</span>
+          <div class="authors">Shuqi Zhao, Ke Yang, <span class="me">Yuxin Chen</span>, Chenran Li, Yichen Xie, Xiang Zhang, Changhao Wang, Masayoshi Tomizuka</div>
+          <div class="venue"><em>ICRA</em>, 2026 <span class="rate">· 38.0%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2505.00991">arXiv</a></div>
+        </div>
+      </div>
 
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tbody><tr>
-            <td width="100%" valign="middle">
-              <h2>Experience</h2>
-            </td>
-          </tr>
-          </tbody>
-        </tbody></table>
+      <!-- Rethinking Image-to-3D -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/rethinking.png" alt="Rethinking Image-to-3D"><span class="conf-badge">Preprint</span></div>
+        <div class="meta">
+          <span class="ptitle">Rethinking Image-to-3D Generation with Sparse Queries: Efficiency, Capacity, and Input-View Bias</span>
+          <div class="authors">Zhiyuan Xu, Jiuming Liu, <span class="me">Yuxin Chen</span>, Kurt Keutzer, Masayoshi Tomizuka, Chenfeng Xu, Chensheng Peng</div>
+          <div class="venue"><em>Preprint</em>, 2025 &nbsp;·&nbsp; under review</div>
+          <div class="reslinks"><a href="https://scholar.google.com/citations?hl=en&user=EzoDsIMAAAAJ">Scholar</a></div>
+        </div>
+      </div>
 
-		<table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-			<tbody>
-				<td width="15%">
-				  <img src="images/logo/nvidia.png" width="120">
-				</td>
-  
-				<td style="padding:20px;width:75%;vertical-align:middle">
-				  <strong>Nvidia</strong>, Santa Clara, CA <br>
-				  <br>
-				  • Research Intern<br>
-				  • Mar. 2026 ~ Present<br>
-								  • Work on Vision-Language-Action Models and World Models for Robotics
-				</td>
-			  </tr>
-		  </tbody></table>
+      <!-- ReLIC / Versatile Loco-Manipulation -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/versatile.gif" alt="Versatile Loco-Manipulation"><span class="conf-badge">CoRL '25</span></div>
+        <div class="meta">
+          <span class="ptitle">Versatile Loco-Manipulation through Flexible Interlimb Coordination</span>
+          <div class="authors">Xinghao Zhu*, <span class="me">Yuxin Chen*</span>, Lingfeng Sun*, Farzad Niroui, Simon Le Cleac'h, Jiuguang Wang, Kuan Fang</div>
+          <div class="venue"><em>CoRL</em>, 2025 <span class="rate">· 35.8%</span></div>
+          <div class="badges"><span class="badge-award rose">🎤 Oral · Top 5.69%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2506.07876">arXiv</a><a href="https://relic-locoman.rai-inst.com">Project</a><a href="https://x.com/ThomasYuxinChen/status/1933562083959808277">X</a></div>
+        </div>
+      </div>
 
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tbody>
-              <td width="15%">
-                <img src="images/logo/rai.jpeg" width="120">
-              </td>
+      <!-- MEReQ -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/chen2024mereq.png" alt="MEReQ"><span class="conf-badge">CoRL '25</span></div>
+        <div class="meta">
+          <span class="ptitle">MEReQ: Max-Ent Residual-Q Inverse RL for Sample-Efficient Alignment from Intervention</span>
+          <div class="authors"><span class="me">Yuxin Chen*</span>, Chen Tang*, Jianglan Wei, Chenran Li, Ran Tian, Xiang Zhang, Wei Zhan, Peter Stone, Masayoshi Tomizuka</div>
+          <div class="venue"><em>CoRL</em>, 2025 <span class="rate">· 35.8%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2406.16258">arXiv</a><a href="https://thomaschen98.github.io/mereq.github.io/">Project</a><a href="https://github.com/ThomasChen98/MEReQ">Code</a><a href="https://youtu.be/Cog_cH90_80">Video</a></div>
+        </div>
+      </div>
 
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>RAI Institute (Boston Dynamics AI Institute)</strong>, Cambridge, MA <br>
-                <br>
-                • Research Intern<br>
-                • Mar. 2025 ~ Jul. 2025<br>
-								• Work on dexterous mobile manipulation
-              </td>
-            </tr>
-        </tbody></table>
+      <!-- FDPP -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/fdpp.gif" alt="FDPP"><span class="conf-badge">ICRA '25</span></div>
+        <div class="meta">
+          <span class="ptitle">FDPP: Fine-tune Diffusion Policy with Human Preference</span>
+          <div class="authors"><span class="me">Yuxin Chen</span>, Devesh K. Jha, Masayoshi Tomizuka, Diego Romeres</div>
+          <div class="venue"><em>ICRA</em>, 2025 <span class="rate">· 38.7%</span></div>
+          <div class="badges"><span class="badge-award rose">🎤 Oral · ICRA-WS</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2501.08259">arXiv</a></div>
+        </div>
+      </div>
 
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tbody>
-              <td width="15%">
-                <img src="images/logo/merl.png" width="120">
-              </td>
+      <!-- Physics-Aware Robotic Palletization -->
+      <div class="pub sel">
+        <div class="thumb"><img loading="lazy" src="images/physics.gif" alt="Physics-Aware Robotic Palletization"><span class="conf-badge">ICRA '25</span></div>
+        <div class="meta">
+          <span class="ptitle">Physics-Aware Robotic Palletization with Online Masking Inference</span>
+          <div class="authors">Tianqi Zhang, Zheng Wu, <span class="me">Yuxin Chen</span>, Yixiao Wang, Boyuan Liang, Scott Moura, Masayoshi Tomizuka, Mingyu Ding, Wei Zhan</div>
+          <div class="venue"><em>ICRA</em>, 2025 <span class="rate">· 38.7%</span></div>
+          <div class="badges"><span class="badge-award gold">🏆 Best Paper in Automation · 10/4153</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2502.13443">arXiv</a><a href="https://github.com/tianqi-zh/palletization">Code</a></div>
+        </div>
+      </div>
 
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>Mitsubishi Electric Research Laboratories</strong>, Cambridge, MA <br>
-                <br>
-                • Research Intern<br>
-                • May. 2024 ~ Aug. 2024<br>
-								• Work on generative model on manipulation
-              </td>
-            </tr>
-        </tbody></table>
+      <!-- DexH2R -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/zhao2024dexh2r.png" alt="DexH2R"><span class="conf-badge">T-MECH '25</span></div>
+        <div class="meta">
+          <span class="ptitle">DexH2R: Task-oriented Dexterous Manipulation from Human to Robots</span>
+          <div class="authors">Shuqi Zhao*, Xinghao Zhu*, <span class="me">Yuxin Chen</span>, Chenran Li, Xiang Zhang, Mingyu Ding, Masayoshi Tomizuka</div>
+          <div class="venue"><em>IEEE/ASME T-MECH</em>, 2025</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2411.04428">arXiv</a></div>
+        </div>
+      </div>
 
-        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tbody>
+      <!-- Testing Human-Hand Segmentation -->
+      <div class="pub">
+        <div class="thumb"><div class="thumb-ph"><span class="v">Mechatronics</span><span class="y">2025</span></div></div>
+        <div class="meta">
+          <span class="ptitle">Testing Human-Hand Segmentation on In-Distribution and Out-of-Distribution Data in Human&ndash;Robot Interactions Using a Deep Ensemble Model</span>
+          <div class="authors">Reza Jalayer, <span class="me">Yuxin Chen</span>, Masoud Jalayer, Carlotta Orsenigo, Masayoshi Tomizuka</div>
+          <div class="venue"><em>Mechatronics</em>, 2025</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2501.07713">arXiv</a></div>
+        </div>
+      </div>
 
-              <td width="15%">
-                <img src="images/logo/zoox.png" width="120">
-              </td>
+      <!-- Advancing Cross-domain -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/xu2024advancing.png" alt="Advancing Cross-domain Discriminability"><span class="conf-badge">NeurIPS '24</span></div>
+        <div class="meta">
+          <span class="ptitle">Advancing Cross-domain Discriminability in Continual Learning of Vision-Language Models</span>
+          <div class="authors"><span class="me">Yuxin Chen*</span>, Yicheng Xu*, Jiahao Nie, Yusong Wang, Huiping Zhuang, Manabu Okumura</div>
+          <div class="venue"><em>NeurIPS</em>, 2024 <span class="rate">· 25.8%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2406.18868">arXiv</a><a href="https://github.com/linghan1997/Regression-based-Analytic-Incremental-Learning">Code</a></div>
+        </div>
+      </div>
 
-              <td style="padding:20px;width:75%;vertical-align:middle">
-                <strong>Zoox</strong>, Foster City, CA <br>
-                <br>
-                • Software Engineering Intern<br>
-                • May. 2021 ~ Aug. 2021 <br>
-                • Work on motion planning for L5 robotaxi
-              </td>
-            </tr>
-        </tbody></table>
+      <!-- Quantifying Agent Interaction -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/chen2023quantifying.png" alt="Quantifying Agent Interaction"><span class="conf-badge">RLC '24</span></div>
+        <div class="meta">
+          <span class="ptitle">Quantifying Interaction Level Between Agents Helps Cost-efficient Generalization in Multi-agent Reinforcement Learning</span>
+          <div class="authors"><span class="me">Yuxin Chen</span>, Chen Tang, Ran Tian, Chenran Li, Jinning Li, Masayoshi Tomizuka, Wei Zhan</div>
+          <div class="venue"><em>RLC</em>, 2024 <span class="rate">· 40%</span></div>
+          <div class="reslinks"><a href="https://rlj.cs.umass.edu/2024/papers/RLJ_RLC_2024_253.pdf">Paper</a><a href="https://github.com/ThomasChen98/Level-of-Influence">Code</a></div>
+        </div>
+      </div>
 
-		<table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-			<tbody><tr>
-			  <td width="100%" valign="middle">
-				<h2>Education</h2>
-			  </td>
-			</tr>
-			</tbody>
-		  </tbody></table>
-  
-		  <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-			<tbody>
-  
-				<td width="15%">
-				  <img src="images/logo/ucb.png" width="100">
-				</td>
-  
-				<td style="padding:20px;width:75%;vertical-align:middle">
-				  <strong>UC Berkeley</strong>, Berkeley, CA <br>
-				  <br>
-				  • PhD in Mechanical Engineering, Robotics & Control  (2022 to Present) <br>
-				</td>
-			  </tr>
-		  </tbody></table>
-  
-				  <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-			<tbody>
-  
-				<td width="15%">
-				  <img src="images/logo/umich.svg" width="100">
-				</td>
-  
-				<td style="padding:20px;width:75%;vertical-align:middle">
-				  <strong>University of Michigan</strong>, Ann Arbor, MI <br>
-				  <br>
-				  • MS in Robotics (2020 to 2022) <br>
-								  • BS in Aerospace (2018 to 2020) <br>
-				</td>
-			  </tr>
-		  </tbody></table>
-  
-				  <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-			<tbody>
-  
-				<td width="15%">
-				  <img src="images/logo/sjtu.png" width="100">
-				</td>
-  
-				<td style="padding:20px;width:75%;vertical-align:middle">
-				  <strong>Shanghai Jiao Tong University</strong>, Shanghai, China<br>
-				  <br>
-				  • BS in Mechanical Engineering (2016 to 2020) <br>
-				</td>
-			  </tr>
-		  </tbody></table>
+      <!-- These Maps are Made for Walking -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/ewen2022these.png" alt="These Maps are Made for Walking"><span class="conf-badge">RA-L '22</span></div>
+        <div class="meta">
+          <span class="ptitle">These Maps are Made for Walking: Real-Time Terrain Property Estimation for Mobile Robots</span>
+          <div class="authors">Parker Ewen, Adam Li, <span class="me">Yuxin Chen</span>, Steven Hong, Ram Vasudevan</div>
+          <div class="venue"><em>IEEE RA-L</em>, 2022</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2205.12925">arXiv</a><a href="https://roahmlab.github.io/sel_map/">Project</a><a href="https://github.com/roahmlab/sel_map">Code</a><a href="https://www.youtube.com/watch?v=4c8Zyd29244">Video</a></div>
+        </div>
+      </div>
 
-<!--        <table table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>-->
-<!--          <tbody>-->
+      <!-- Generating Continuous Motion -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/ewen2021generating.png" alt="Generating Continuous Motion and Force Plans"><span class="conf-badge">ICRA '21</span></div>
+        <div class="meta">
+          <span class="ptitle">Generating Continuous Motion and Force Plans in Real-Time for Legged Mobile Manipulation</span>
+          <div class="authors">Parker Ewen, Jean-Pierre Sleiman, <span class="me">Yuxin Chen</span>, Wei-Chun Lu, Marco Hutter, Ram Vasudevan</div>
+          <div class="venue"><em>ICRA</em>, 2021 <span class="rate">· 43.6%</span></div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/2104.11685">arXiv</a><a href="https://www.youtube.com/watch?v=A9cBz8uujAs">Video</a></div>
+        </div>
+      </div>
 
-<!--              <td width="15%">-->
-<!--                <img src="images/MSRA.png" width="160">-->
-<!--              </td>-->
+      <!-- Nailed It -->
+      <div class="pub">
+        <div class="thumb"><img loading="lazy" src="images/romano2021nailed.png" alt="Nailed It"><span class="conf-badge">AIAA '21</span></div>
+        <div class="meta">
+          <span class="ptitle">Nailed It: Autonomous Roofing with a Nailgun-Equipped Octocopter</span>
+          <div class="authors">Matthew M. Romano, <span class="me">Yuxin Chen</span>, Owen Marshall, Ella Atkins</div>
+          <div class="venue"><em>AIAA AVIATION</em>, 2021</div>
+          <div class="reslinks"><a href="https://arxiv.org/abs/1909.08162">arXiv</a><a href="https://www.youtube.com/watch?v=GA445Flxkjo">Video</a></div>
+        </div>
+      </div>
+      <button class="showmore" type="button" data-target="#publications" data-more="▸ show full list" data-less="▾ show selected only" aria-expanded="false">▸ show full list</button>
+    </section>
 
-<!--              <td style="padding:20px;width:75%;vertical-align:middle">-->
-<!--                <strong>Microsoft Research Asia</strong>, Beijing, China <br>-->
-<!--                <br>-->
-<!--                • Research Intern at Machine Learning group<br>-->
-<!--                • Mar. 2018 ~ Jun.2019 <br>-->
-<!--                • Core contributor of <b style="color:rgb(183, 0, 0)">Suphx</b> (<strong>Strongest Mahjong AI around the world</strong>), well matched to the top  professional human player.  <a href="https://www.microsoft.com/en-us/research/project/suphx-mastering-mahjong-with-deep-reinforcement-learning/">Microsoft News</a>-->
-<!--              </td>-->
-<!--            </tr>-->
-<!--        </tbody></table>-->
+    <!-- ============== Background: two-sided dated timeline ============== -->
+    <section class="section band tint" id="background">
+      <h2>🧭 Background</h2>
+      <div class="bg-wide">
+        <div class="bgtl-cols"><span class="edu">🎓 Education</span><span class="exp">💼 Experience</span></div>
 
-<!--        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>-->
-<!--          <tbody><tr>-->
-<!--            <td width="100%" valign="middle">-->
-<!--              <heading>Honors & Awards</heading>-->
-<!--              <p></p>-->
-<!--              <div style="display: flex; justify-content: space-between;">-->
-<!--                <span><b style="color:rgb(183, 0, 0)">Best Paper on Mobile Manipulation @ IROS 2024 (1 out of 2000+)</b></span>-->
-<!--                <span> Oct, 2024</span>-->
-<!--              </div>-->
+        <div class="bgtl">
+          <div class="bgtl-axis"></div>
+          <svg class="bgtl-leads" preserveAspectRatio="none" aria-hidden="true"></svg>
 
-<!--              <div style="display: flex; justify-content: space-between;">-->
-<!--                <span><b style="color:rgb(183, 0, 0)">Best Workshop Paper @ CORL 2023 Deployable Workshop</b></span>-->
-<!--                <span> Nov, 2023</span>-->
-<!--              </div>-->
-<!--              &lt;!&ndash; <p>-->
-<!--              <strong>Best Workshop Paper @ CORL 2023 Deployable Workshop</strong>  Nov, 2024 <br>-->
-<!--              </p> &ndash;&gt;-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-<!--        </tbody></table>-->
+          <!-- year ticks (top = now) -->
+          <span class="bgtl-yr" style="top:4.55%">Now</span>
+          <span class="bgtl-yr" style="top:18.18%">2025</span>
+          <span class="bgtl-yr" style="top:27.27%">2024</span>
+          <span class="bgtl-yr" style="top:36.36%">2023</span>
+          <span class="bgtl-yr" style="top:45.45%">2022</span>
+          <span class="bgtl-yr" style="top:54.55%">2021</span>
+          <span class="bgtl-yr" style="top:63.64%">2020</span>
+          <span class="bgtl-yr" style="top:72.73%">2019</span>
+          <span class="bgtl-yr" style="top:81.82%">2018</span>
+          <span class="bgtl-yr" style="top:90.91%">2017</span>
+          <span class="bgtl-yr" style="top:100%">2016</span>
 
-<!--        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>-->
-<!--          <tbody><tr>-->
-<!--            <td width="100%" valign="middle">-->
-<!--              <heading>Professional Service</heading>-->
+          <!-- duration bars at true dates (edu left of axis, exp right); offset out so year labels stay clear -->
+          <div class="bgtl-bar" data-k="berkeley" style="top:4.55%;height:40.9%;right:50%;margin-right:26px;background:#16895c"></div>
+          <div class="bgtl-bar" data-k="umich" style="top:45.45%;height:36.36%;right:50%;margin-right:38px;background:#1f9d6b"></div>
+          <div class="bgtl-bar" data-k="sjtu" style="top:63.64%;height:36.36%;right:50%;margin-right:26px;background:#5cc79e"></div>
+          <div class="bgtl-bar" data-k="nvidia" style="top:3%;height:4.55%;left:50%;margin-left:26px;background:#2f6fd0"></div>
+          <div class="bgtl-bar" data-k="rai" style="top:12.09%;height:4.55%;left:50%;margin-left:26px;background:#3b7fe0"></div>
+          <div class="bgtl-bar" data-k="merl" style="top:21.18%;height:3.09%;left:50%;margin-left:26px;background:#5f9bf0"></div>
+          <div class="bgtl-bar" data-k="zoox" style="top:48.45%;height:3.1%;left:50%;margin-left:26px;background:#8bb8ff"></div>
 
-<!--              <p></p>-->
-<!--              <div style="display: flex; justify-content: space-between;">-->
-<!--                <span>-->
-<!--                  <strong>Conference Reviewer:</strong>-->
-<!--                </span>-->
-<!--                <span> ECCV / CVPR / ICCV / NeurIPS / ICLR / ICML / AAAI / ICRA / IROS / Humanoids </span>-->
-<!--                &lt;!&ndash; <span>AAAI, ICRA, ECCV, CVPR, ICCV, NeurIPS, IROS, ICLR, Humanoids</span> &ndash;&gt;-->
-<!--              </div>-->
+          <!-- Education cards (left, positioned by date) -->
+          <div class="bgcol edu">
+            <div class="bgcard edu" data-k="berkeley" style="top:25%;--ec:#16895c">
+              <span class="blogo"><img src="images/logo/ucb.png" alt="UC Berkeley"></span>
+              <div class="bbody">
+                <div class="d">2022 — Present</div>
+                <div class="o">UC Berkeley <span class="loc">Berkeley, CA</span></div>
+                <div class="r">Ph.D., Mechanical Eng. (Control)</div>
+              </div>
+            </div>
+            <div class="bgcard edu" data-k="umich" style="top:63.64%;--ec:#1f9d6b">
+              <span class="blogo"><img src="images/logo/umich.svg" alt="University of Michigan"></span>
+              <div class="bbody">
+                <div class="d">2018 — 2022</div>
+                <div class="o">Univ. of Michigan <span class="loc">Ann Arbor, MI</span></div>
+                <div class="r">M.S. Robotics · B.S. Aerospace</div>
+              </div>
+            </div>
+            <div class="bgcard edu" data-k="sjtu" style="top:81.82%;--ec:#5cc79e">
+              <span class="blogo"><img src="images/logo/sjtu.png" alt="Shanghai Jiao Tong University"></span>
+              <div class="bbody">
+                <div class="d">2016 — 2020</div>
+                <div class="o">Shanghai Jiao Tong U. <span class="loc">Shanghai, China</span></div>
+                <div class="r">B.S. Mechanical Engineering</div>
+              </div>
+            </div>
+          </div>
 
-<!--              <div style="display: flex; justify-content: space-between;">-->
-<!--                <span>-->
-<!--                  <strong>Journal Reviewer: </strong>-->
-<!--                </span>-->
-<!--                <span>RAL / TRO</span>-->
-<!--              </div>-->
-<!--              &lt;!&ndash; <strong>Conference Reviewer: </strong>-->
-<!--              AAAI, ICRA, ECCV, CVPR, ICCV, NeurIPS, IROS, ICLR, Humanoids <br>-->
-<!--              </p>-->
-<!--              <p>-->
-<!--              <strong>Journal Reviewer:</strong>-->
-<!--              RAL, TRO<br>-->
-<!--              </p> &ndash;&gt;-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-<!--        </tbody></table>-->
+          <!-- Experience cards (right, evenly spaced; dashed leaders point to true dates) -->
+          <div class="bgcol exp">
+            <div class="bgcard exp" data-k="nvidia" style="top:11%;--ec:#2f6fd0">
+              <span class="blogo"><img src="images/logo/nvidia.png" alt="NVIDIA"></span>
+              <div class="bbody">
+                <div class="d">Mar 2026 — Present</div>
+                <div class="o">NVIDIA <span class="loc">Santa Clara, CA</span></div>
+                <div class="r">Research Intern · VLA &amp; world models</div>
+              </div>
+            </div>
+            <div class="bgcard exp" data-k="rai" style="top:35%;--ec:#3b7fe0">
+              <span class="blogo"><img src="images/logo/rai.jpeg" alt="RAI Institute"></span>
+              <div class="bbody">
+                <div class="d">Mar — Aug 2025</div>
+                <div class="o">RAI Institute <span class="loc">Cambridge, MA</span></div>
+                <div class="r">Research Intern · mobile manipulation</div>
+              </div>
+            </div>
+            <div class="bgcard exp" data-k="merl" style="top:59%;--ec:#5f9bf0">
+              <span class="blogo"><img src="images/logo/merl.png" alt="MERL"></span>
+              <div class="bbody">
+                <div class="d">May — Aug 2024</div>
+                <div class="o">MERL <span class="loc">Cambridge, MA</span></div>
+                <div class="r">Research Intern · generative manip.</div>
+              </div>
+            </div>
+            <div class="bgcard exp" data-k="zoox" style="top:83%;--ec:#8bb8ff">
+              <span class="blogo"><img src="images/logo/zoox.png" alt="Zoox"></span>
+              <div class="bbody">
+                <div class="d">May — Aug 2021</div>
+                <div class="o">Zoox <span class="loc">Foster City, CA</span></div>
+                <div class="r">SWE Intern · motion planning</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!--        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>-->
-<!--          <tbody><tr>-->
-<!--            <td width="100%" valign="middle">-->
-<!--              <heading>Teaching Experience</heading>-->
-<!--              <p>-->
-<!--              <strong>Math 155A, 3D Computer Graphics, UCSD</strong><br>-->
-<!--              20Fall, Teaching Assistant <br>-->
-<!--              </p>-->
-<!--              <p>-->
-<!--              <strong>ECE 176, Introduction to Deep Learning & Applications, UCSD</strong><br>-->
-<!--              21Winter / 23Winter, Teaching Assistant <br>-->
-<!--              </p>-->
-<!--              <p>-->
-<!--              <strong>ECE 285, Introduction to Visual Learning, UCSD</strong><br>-->
-<!--              24Spring, Teaching Assistant <br>-->
-<!--              </p>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-<!--        </tbody></table>-->
+    <!-- ============== Footer ============== -->
+    <footer class="footer">
+      Last updated <span id="lastupd">Jun 2026</span> · Yuxin Chen <span class="zh">陈瑀昕</span>
+      <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=250&t=n&d=xHEqsE3-cs5xSGfhejjq_heI0c-bCiXKYwA4T-1llyQ&co=323232'></script>
+    </footer>
 
-<!--        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>-->
-<!--          <tbody><tr>-->
-<!--            <td width="100%" valign="middle">-->
-<!--              <heading>Misc</heading>-->
-<!--              <p>-->
-<!--              <strong>Soccer</strong>: <a href="https://www.manutd.com/"> Man-United</a> Fans <br>-->
-<!--                <strong>Gaming</strong>: League <br>-->
-<!--                <strong>Photograph</strong>: Novice<br>-->
-<!--                <strong>Swimming</strong>: Novice<br>-->
-<!--                <strong>Hiking</strong><br>-->
-<!--                <strong>Driving</strong>: Learning Manual<br>-->
-<!--              </p>-->
-<!--            </td>-->
-<!--          </tr>-->
-<!--          </tbody>-->
-<!--        </tbody></table>-->
+  </main>
 
+  <script>
+    (function(){
+      var root = document.documentElement;
+      function setTheme(t){ root.setAttribute('data-theme', t); try { localStorage.setItem('theme', t); } catch(e){} }
+      var btn = document.querySelector('.theme-toggle');
+      if (btn) btn.addEventListener('click', function(){
+        var cur = root.getAttribute('data-theme') || 'light';
+        setTheme(cur === 'dark' ? 'light' : 'dark');
+      });
 
-						<!-------------------------------------------------------------------------->
-						<!-------------------------------Credit------------------------------------->
-						<!-------------------------------------------------------------------------->
-						<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-							<tr>
-								<td style="padding:0px">
-									<br>
-									<p style="text-align:right;">Template from <a href="https://jonbarron.info/">Jon Barron</a></p>
-								</td>
-							</tr>
-						</tbody></table>
-					</tbody></table>
-				</td>
-			</tr>
-		</tbody></table>
-	</body>
+      // scroll-spy: highlight current section in the top nav
+      var links = {};
+      document.querySelectorAll('.navlinks a').forEach(function(a){ links[a.getAttribute('href').slice(1)] = a; });
+      var spy = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){
+          if (e.isIntersecting) {
+            Object.keys(links).forEach(function(k){ links[k].classList.remove('active'); });
+            if (links[e.target.id]) links[e.target.id].classList.add('active');
+          }
+        });
+      }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+      ['about','news','publications','background'].forEach(function(id){ var el = document.getElementById(id); if (el) spy.observe(el); });
 
-	<footer id="post-footer" style="background-color: rgb(50, 50, 50); padding-top:30px; padding-bottom:0px; text-align:center;font-size:13px;">
-		Last updated: Jan 2026
-		<script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=250&t=n&d=xHEqsE3-cs5xSGfhejjq_heI0c-bCiXKYwA4T-1llyQ&co=323232'></script>
-	</footer>
+      // show-more toggles (bio / news)
+      document.querySelectorAll('.showmore').forEach(function(b){
+        b.addEventListener('click', function(){
+          var box = document.querySelector(b.getAttribute('data-target'));
+          if (!box) return;
+          var open = box.classList.toggle('expanded');
+          b.textContent = open ? b.getAttribute('data-less') : b.getAttribute('data-more');
+          b.setAttribute('aria-expanded', String(open));
+        });
+      });
+
+      // footer "Last updated": reflect the latest commit date (auto-updates every push)
+      fetch('https://api.github.com/repos/ThomasChen98/thomaschen98.github.io/commits?per_page=1')
+        .then(function(r){ return r.ok ? r.json() : null; })
+        .then(function(d){
+          if (!d || !d[0] || !d[0].commit) return;
+          var dt = new Date(d[0].commit.committer.date);
+          var el = document.getElementById('lastupd');
+          if (el) el.textContent = dt.toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+        })
+        .catch(function(){});
+
+      // news: auto-fold items > 1 year old, mark items <= 3 months as new
+      (function(){
+        var M = { jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,oct:9,nov:10,dec:11 };
+        var now = new Date();
+        var cur = now.getFullYear() * 12 + now.getMonth();
+        document.querySelectorAll('#newsbox .row').forEach(function(row){
+          var d = row.querySelector('.date');
+          if (!d) return;
+          var parts = d.textContent.replace(/[\[\]]/g, '').trim().split(/\s+/);
+          var mi = M[(parts[0] || '').slice(0, 3).toLowerCase()];
+          var yr = parseInt(parts[1], 10);
+          if (mi === undefined || isNaN(yr)) return;
+          var ago = cur - (yr * 12 + mi);
+          row.classList.toggle('extra', ago > 12);
+          var what = row.querySelector('.what');
+          if (ago >= 0 && ago <= 3 && what && !what.querySelector('.newmark')) {
+            what.insertAdjacentHTML('afterbegin', '<span class="newmark">🆕</span> ');
+          }
+        });
+      })();
+
+      // timeline dashed leader lines (lane'd elbows) + hover highlight
+      var SVGNS = 'http://www.w3.org/2000/svg';
+      var LANE = { berkeley: 0.5, umich: 0.5, sjtu: 0.5, nvidia: 0.30, rai: 0.48, merl: 0.66, zoox: 0.84 };
+      function drawLeads(){
+        var box = document.querySelector('.bgtl');
+        var svg = document.querySelector('.bgtl-leads');
+        if (!box || !svg) return;
+        var br = box.getBoundingClientRect();
+        while (svg.firstChild) svg.removeChild(svg.firstChild);
+        if (br.width < 620) return;   // narrow / mobile: linearized, lines hidden
+        svg.setAttribute('viewBox', '0 0 ' + br.width + ' ' + br.height);
+        document.querySelectorAll('.bgcard[data-k]').forEach(function(card){
+          var k = card.getAttribute('data-k');
+          var bar = document.querySelector('.bgtl-bar[data-k="' + k + '"]');
+          if (!bar) return;
+          var cr = card.getBoundingClientRect(), barr = bar.getBoundingClientRect();
+          var edu = card.classList.contains('edu');
+          var bY = barr.top + barr.height / 2 - br.top;
+          var cY = cr.top + cr.height / 2 - br.top;
+          var bX = edu ? (barr.left - br.left) : (barr.right - br.left);
+          var cX = edu ? (cr.right - br.left) : (cr.left - br.left);
+          var mX = bX + (cX - bX) * (LANE[k] || 0.4);
+          var path = document.createElementNS(SVGNS, 'path');
+          path.setAttribute('d', 'M' + bX + ',' + bY + ' L' + mX + ',' + bY + ' L' + mX + ',' + cY + ' L' + cX + ',' + cY);
+          var c = getComputedStyle(card).getPropertyValue('--ec').trim();
+          path.setAttribute('stroke', c || 'currentColor');
+          path.setAttribute('data-k', k);
+          svg.appendChild(path);
+        });
+      }
+      function hot(k, on){
+        var bar = document.querySelector('.bgtl-bar[data-k="' + k + '"]');
+        var path = document.querySelector('.bgtl-leads path[data-k="' + k + '"]');
+        if (bar) bar.classList.toggle('hot', on);
+        if (path) path.classList.toggle('hot', on);
+      }
+      document.querySelectorAll('.bgcard[data-k]').forEach(function(card){
+        var k = card.getAttribute('data-k');
+        card.addEventListener('mouseenter', function(){ hot(k, true); });
+        card.addEventListener('mouseleave', function(){ hot(k, false); });
+      });
+      var tid;
+      function schedule(){ clearTimeout(tid); tid = setTimeout(drawLeads, 90); }
+      window.addEventListener('resize', schedule);
+      window.addEventListener('load', drawLeads);
+      if (document.fonts && document.fonts.ready) document.fonts.ready.then(drawLeads);
+      drawLeads();
+      setTimeout(drawLeads, 350);
+      setTimeout(drawLeads, 1000);
+    })();
+  </script>
+</body>
 </html>
