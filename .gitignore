@@ -1,12 +1,3 @@
 # macOS / IDE
 .DS_Store
 .idea/
-
-# raw source media kept locally for re-converting thumbnails (converted versions live in images/)
-/*.mp4
-/*.mov
-/Claw.gif
-/physics-aware.gif
-/mean_flow.png
-/REAR.png
-/rethinking.png

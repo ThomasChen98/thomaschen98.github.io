@@ -145,7 +145,7 @@ em { font-style: italic; color: var(--muted); }
 .header .intro { flex: 1 1 auto; min-width: 0; }
 .name { margin: 0 0 7px; font-size: 39px; font-weight: 700; letter-spacing: -0.4px; line-height: 1.14; }
 .name .zh { font-family: var(--zh); font-weight: 400; margin-left: 26px; font-size: 43px; letter-spacing: 3px; vertical-align: -1px; }
-.caret { color: var(--accent); font-weight: 400; animation: blink 1.15s step-end infinite; margin-left: 2px; }
+.caret { color: var(--accent); font-weight: 400; animation: blink 1.15s step-end infinite; margin-left: 2px; vertical-align: 0.12em; }
 @keyframes blink { 50% { opacity: 0; } }
 .tagline { color: var(--muted); font-size: 13px; margin: 0 0 11px; }
 .tagline .dot { color: var(--faint); margin: 0 6px; }
@@ -299,6 +299,9 @@ em { font-style: italic; color: var(--muted); }
 }
 .footer a { color: var(--muted); }
 .footer .zh { font-family: var(--zh); font-size: 13px; letter-spacing: 1px; }
+.footer .license { margin-top: 8px; font-size: 11px; line-height: 1.6; color: var(--faint); }
+.footer .license a { color: var(--muted); }
+.footer .license a:hover { color: var(--accent2); }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 600px) {
