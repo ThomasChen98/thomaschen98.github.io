@@ -167,12 +167,52 @@
     padding: 11px 14px; max-width: 280px; font-size: 12.5px; color: var(--ink-2); line-height: 1.5;
   }
   #tooltip .tt-name { font-size: 14.5px; font-weight: 600; color: var(--ink); margin-bottom: 1px; }
-  #tooltip .tt-badge {
+  #tooltip .tt-badge, #detail .tt-badge {
     display: inline-block; font-size: 10.5px; font-weight: 500; letter-spacing: .05em;
     color: var(--accent-deep); border: 1px solid var(--accent); border-radius: 4px;
     padding: 1px 6px; margin-top: 5px;
   }
 
+  #detail {
+    display: none; position: absolute; top: 76px; right: 18px; z-index: 30;
+    width: 302px; max-width: calc(100% - 36px);
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.18); padding: 18px;
+    font-size: 13px; color: var(--ink-2); line-height: 1.55;
+  }
+  #detail .d-close {
+    position: absolute; top: 6px; right: 8px; background: none; border: none;
+    color: var(--muted); font-size: 20px; cursor: pointer; padding: 4px 8px;
+  }
+  #detail .d-close:hover { color: var(--ink); }
+  #detail .d-head { display: flex; gap: 13px; align-items: center; margin-bottom: 8px; }
+  #detail .d-photo {
+    width: 76px; height: 76px; border-radius: 50%; object-fit: cover;
+    border: 2.5px solid var(--accent); flex: none;
+  }
+  #detail .d-initials {
+    width: 76px; height: 76px; border-radius: 50%; flex: none;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 25px; font-weight: 500;
+  }
+  #detail .d-name {
+    font-family: 'Playfair Display', serif; font-size: 19px; font-weight: 600;
+    color: var(--ink); line-height: 1.25;
+  }
+  #detail .d-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  #detail .d-line { margin-top: 6px; }
+  #detail .d-bio { margin-top: 8px; font-style: italic; }
+  #detail .d-badges { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  #detail .d-update {
+    margin-top: 12px; padding-top: 10px; border-top: 1px solid var(--grid); font-size: 12px;
+  }
+  @media (max-width: 700px) {
+    #detail {
+      position: fixed; top: auto; bottom: 0; left: 0; right: 0; width: auto;
+      border-radius: 14px 14px 0 0; z-index: 70;
+      box-shadow: 0 -10px 40px rgba(0,0,0,0.25);
+    }
+  }
   #tableView { display: none; max-height: 640px; overflow-y: auto; }
   table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
   thead th {
@@ -248,8 +288,9 @@
     </div>
     <div class="legend" id="legend"></div>
     <div id="chart" role="group" aria-label="Radial family tree of Professor Tomizuka's students"></div>
+    <div id="detail" role="dialog" aria-label="Person details"></div>
     <p class="hint" id="chartHint" style="text-align:center; margin:6px 0 0;">
-      hover a dot for details · click a gold-ringed professor to open their branch ·
+      hover for a quick look · click anyone for their card — professors also open their branch ·
       drag to pan · ⌘/Ctrl&thinsp;+&thinsp;scroll or pinch to zoom</p>
     <div id="tableView"></div>
   </div>
@@ -548,9 +589,96 @@ window.addEventListener('error', function (e) {
   }
   const hideTip = () => { tt.style.display = 'none'; };
 
+  // ---- detail card (click-to-pin: everything the survey knows) -------------
+  const detail = document.getElementById('detail');
+  const hideDetail = () => { detail.style.display = 'none'; };
+
+  function showDetail(d) {
+    detail.textContent = '';
+    const close = document.createElement('button');
+    close.className = 'd-close';
+    close.textContent = '×';
+    close.setAttribute('aria-label', 'Close details');
+    close.addEventListener('click', hideDetail);
+    detail.appendChild(close);
+
+    const head = document.createElement('div');
+    head.className = 'd-head';
+    if (d.photo) {
+      const img = document.createElement('img');
+      img.className = 'd-photo';
+      img.src = d.photo;
+      img.alt = d.name;
+      head.appendChild(img);
+    } else {
+      const ini = document.createElement('div');
+      ini.className = 'd-initials';
+      const di = DECADES.indexOf(d.decade);
+      ini.style.background = `var(--dec-${di})`;
+      ini.style.color = `var(--dec-${di}-ink)`;
+      ini.textContent = d.name.split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+      head.appendChild(ini);
+    }
+    const hw = document.createElement('div');
+    const nm = document.createElement('div');
+    nm.className = 'd-name';
+    nm.textContent = d.name + (d.inMemoriam ? ' †' : '');
+    hw.appendChild(nm);
+    const sub = document.createElement('div');
+    sub.className = 'd-sub';
+    sub.textContent = d.depth > 1 ? `${d.batch} · Advisor: ${d.parentNode.name}` : d.batch;
+    hw.appendChild(sub);
+    head.appendChild(hw);
+    detail.appendChild(head);
+
+    const addLine = (text, cls) => {
+      if (!text) return;
+      const el = document.createElement('div');
+      el.className = cls || 'd-line';
+      el.textContent = text;
+      detail.appendChild(el);
+    };
+    addLine(d.affiliation ? (d.title ? `${d.title}, ${d.affiliation}` : d.affiliation) : null);
+    addLine(d.note);
+    addLine(d.bio, 'd-bio');
+    if (d.inMemoriam) addLine('In memoriam');
+
+    const badges = document.createElement('div');
+    badges.className = 'd-badges';
+    const addBadge = (text) => {
+      const b = document.createElement('span');
+      b.className = 'tt-badge';
+      b.textContent = text;
+      badges.appendChild(b);
+    };
+    if (d.educator) {
+      addBadge(d.children && d.children.length
+        ? `PROFESSOR · ${d.children.length} students on file`
+        : 'PROFESSOR · students via survey');
+    }
+    if (d.provisional) addBadge('PENDING SURVEY');
+    if (badges.childNodes.length) detail.appendChild(badges);
+
+    const upd = document.createElement('div');
+    upd.className = 'd-update';
+    const a = document.createElement('a');
+    a.href = 'survey.html';
+    a.textContent = `Is this you? Update your card →`;
+    upd.appendChild(a);
+    detail.appendChild(upd);
+
+    detail.style.display = 'block';
+  }
+
   // on touch the tooltip stays after the tap; dismiss by tapping elsewhere
   document.addEventListener('pointerdown', (e) => {
-    if (!e.target.closest('.person') && !e.target.closest('.ghostn')) hideTip();
+    if (!e.target.closest('.person') && !e.target.closest('.ghostn')) {
+      hideTip();
+      if (!e.target.closest('#detail')) hideDetail();
+    }
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') hideDetail();
   });
 
   // ---- branches: real children when the data has them, ghosts until then ---
@@ -694,10 +822,12 @@ window.addEventListener('error', function (e) {
         showTip(d, { clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 });
       })
       .on('blur', hideTip)
-      .on('click', (e, d) => toggleBranch(d))
+      // click anyone -> detail card; professors also toggle their branch
+      .on('click', (e, d) => { showDetail(d); toggleBranch(d); })
       .on('keydown', (e, d) => {
-        if (d.educator && (e.key === 'Enter' || e.key === ' ')) {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
+          showDetail(d);
           toggleBranch(d);
         }
       });
