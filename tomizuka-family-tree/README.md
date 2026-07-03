@@ -61,8 +61,17 @@ Already built:
   generations 2…N need no page changes, only data. Unmatched advisors land in
   `data/needs-review.md` for a human pass.
 
-Remaining: a GitHub Action on a daily cron that pulls `<apps-script-url>?format=csv`,
-runs the merge, downloads new photos into `photos/`, and commits.
+- **`.github/workflows/update-tomizuka-tree.yml`** (repo root) — rebuilds the
+  tree **every 6 hours** (plus a manual Run-workflow button) from
+  `data/base.json` (the sanitized, email-free snapshot of the contact sheet)
+  merged with `data/sample_responses.csv` and, once `SURVEY_CSV_URL` in the
+  workflow is filled in, the live Apps Script CSV. Commits only when the data
+  actually changed; GitHub Pages redeploys in ~1 minute.
+
+So the refresh latency is: survey submission → Google Sheet (instant) →
+next 6-hour cron (or a manual trigger) → live about a minute later.
+Photos submitted via `photo_url` still need a manual pass (download, verify,
+`sips -Z 240`, commit into `photos/`).
 
 `data/sample_responses.csv` is a demo of the format — 45 real PhD students of
 Changliu Liu (CMU), Kyoungchul Kong (KAIST) and Xu Chen (UW), scraped from
