@@ -174,8 +174,8 @@
   }
 
   #detail {
-    display: none; position: absolute; top: 76px; right: 18px; z-index: 30;
-    width: 302px; max-width: calc(100% - 36px);
+    display: none; position: fixed; z-index: 65;
+    width: 302px; max-width: calc(100vw - 36px);
     background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
     box-shadow: 0 12px 40px rgba(0,0,0,0.18); padding: 18px;
     font-size: 13px; color: var(--ink-2); line-height: 1.55;
@@ -593,7 +593,7 @@ window.addEventListener('error', function (e) {
   const detail = document.getElementById('detail');
   const hideDetail = () => { detail.style.display = 'none'; };
 
-  function showDetail(d) {
+  function showDetail(d, evt) {
     detail.textContent = '';
     const close = document.createElement('button');
     close.className = 'd-close';
@@ -668,6 +668,22 @@ window.addEventListener('error', function (e) {
     detail.appendChild(upd);
 
     detail.style.display = 'block';
+    // pin near the click; the mobile media query turns it into a bottom sheet
+    if (matchMedia('(max-width: 700px)').matches) {
+      detail.style.left = detail.style.top = '';
+      detail.style.right = detail.style.bottom = '';
+    } else {
+      const r = detail.getBoundingClientRect();
+      let x = evt.clientX + 18, y = evt.clientY - 24;
+      if (x + r.width > innerWidth - 10) x = evt.clientX - r.width - 18;
+      x = Math.max(10, x);
+      y = Math.min(y, innerHeight - r.height - 10);
+      y = Math.max(10, y);
+      detail.style.left = x + 'px';
+      detail.style.top = y + 'px';
+      detail.style.right = 'auto';
+      detail.style.bottom = 'auto';
+    }
   }
 
   // on touch the tooltip stays after the tap; dismiss by tapping elsewhere
@@ -822,12 +838,13 @@ window.addEventListener('error', function (e) {
         showTip(d, { clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 });
       })
       .on('blur', hideTip)
-      // click anyone -> detail card; professors also toggle their branch
-      .on('click', (e, d) => { showDetail(d); toggleBranch(d); })
+      // click anyone -> detail card near the pointer; professors also toggle
+      .on('click', (e, d) => { hideTip(); showDetail(d, e); toggleBranch(d); })
       .on('keydown', (e, d) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          showDetail(d);
+          const r = e.currentTarget.getBoundingClientRect();
+          showDetail(d, { clientX: r.left + r.width / 2, clientY: r.top + r.height / 2 });
           toggleBranch(d);
         }
       });
