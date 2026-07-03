@@ -11,10 +11,8 @@ jobs:
     permissions:
       contents: write
     env:
-      # Paste the Google Apps Script web-app URL (…/exec) here once
-      # scripts/apps_script.gs is deployed. Empty = rebuild from committed
-      # data only (sample responses still merge).
-      SURVEY_CSV_URL: ''
+      # Google Apps Script web-app URL — GET returns responses as CSV (no emails)
+      SURVEY_CSV_URL: 'https://script.google.com/macros/s/AKfycbynzOtTM7IpW38e0ygxmRwPTsQesQJqwQx7i6vpFMXPo9cfgyoBCAocYyIWSEU5at89/exec'
     steps:
       - uses: actions/checkout@v4
 
