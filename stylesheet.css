@@ -208,7 +208,9 @@ em { font-style: italic; color: var(--muted); }
 .pub:last-child { border-bottom: 0; }
 .pub .thumb { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
 .pub .thumb img, .pub .thumb video { width: 150px; height: auto; border-radius: 8px; border: 1px solid var(--rule); display: block; }
-.pub .thumb video { object-fit: cover; background: var(--cb-bar); }  /* poster ratio differs from the clip; crop instead of letterbox */
+/* video thumbs: lock to the same shape as the gif thumbs (340x191) so they can't
+   resize themselves once metadata loads, and crop rather than letterbox */
+.pub .thumb video { aspect-ratio: 340 / 191; object-fit: cover; background: var(--cb-bar); }
 .pub .conf-badge {
   display: inline-block; background: var(--cb-bar); color: var(--muted);
   border: 1px solid var(--rule); font-size: 10.5px; font-weight: 600;
